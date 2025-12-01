@@ -19,11 +19,14 @@ def main():
         if frase.lower() == "salir":
             print("Programa finalizado.")
             break
-
-        if esPalindromo(frase):
-            print("La frase es palíndroma.")
-        else:
-            print("La frase no es palíndroma.")
-
+        
+        try:
+            if esPalindromo(frase):
+                print("La frase es palíndroma.")
+            else:
+                print("La frase no es palíndroma.")
+        except TypeError as e:
+            print(f"Error: {e}")
+            
 if __name__ == "__main__":
     main()
